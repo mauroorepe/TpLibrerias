@@ -39,14 +39,17 @@ function agregarElemento(evento) {
     }
 }
 
+//AGREGADO DE TOASTIFY
+
 function mostrarAlerta(texto, color) {
-    alert.textContent = texto
-    alert.classList.add(`alert-${color}`)
-    setTimeout(function () {
-        alert.textContent = ""
-        alert.classList.remove(`alert-${color}`)
-    }, 1000)
+    Toastify({
+        text: texto,
+        className: `alert-${color}`,
+        duration: "1500"
+    }).showToast();
 }
+
+
 
 function borrarPieza(evento) {
     const elemento = evento.currentTarget.parentElement.parentElement
